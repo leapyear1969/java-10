@@ -1,0 +1,30 @@
+interface Inter {
+	public abstract void show();
+}
+
+class Outer{
+	//code here
+	public static Inter method(){
+		 return new Inter(){
+			public void show(){
+				System.out.println("Hello world!");
+			}
+		};
+	}
+}
+
+
+public class InterDemo {
+
+	public static void main(String[] args) {
+				//实现下面的调用，并且在控制台输出hello world
+		/*1.Outer.method说明类调用对象
+		 * 2.Outer.method.show()说明Outer.method()返回的是一个对象，然后再调用的这个show 方法
+		 * 3.要求返回对象，说明要new对象，然后接受的参数是对象。
+		 *public static Inter method();
+		 *return new Inter(){} 
+		 * */
+		
+		Outer.method().show();
+	}
+}
